@@ -6,27 +6,27 @@ import javax.persistence.*;
 
 @Builder
 @Entity
-@Table(name = "item")
-public class Item {
+@Table(name = "user")
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private long id;
 
-    @Column(name = "item_name", unique = true)
+    @Column(name = "username", unique = true)
     private String name;
 
-    @Column(name = "item_price")
-    private double price;
+    @Column(name = "password")
+    private String password;
 
-    public Item(long id, String name, double price) {
+    public User(long id, String name, String password) {
         this.id = id;
         this.name = name;
-        this.price = price;
+        this.password = password;
     }
 
-    public Item() {
+    public User() {
     }
 
     public long getId() {
@@ -45,11 +45,11 @@ public class Item {
         this.name = name;
     }
 
-    public double getPrice() {
-        return price;
+    public String getPassword() {
+        return password;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

@@ -31,4 +31,9 @@ public class SimpleItemService implements ItemService {
     public void save(Item item) {
         this.itemRepository.save(item);
     }
+
+    @Override
+    public Item getItemByName(String itemName) {
+        return this.itemRepository.findByName(itemName);
+    }
 }
